@@ -36,9 +36,9 @@ Install all the dependencies by running the command npm -i
 
 👤 **Kolapo Precious Akinrinlola**
 
-- GitHub: [@abe1able](https://github.com/LIBERCOSOFT)
-- Twitter: [@AbelSeifu15](https://twitter.com/Gerfieldt)
-- Linkedin: [@abelseifu](https://www.linkedin.com/in/kolapo-akinrinlola-072097110)
+- GitHub: [@LIBERCOSOFT](https://github.com/LIBERCOSOFT)
+- Twitter: [@Gerfieldt](https://twitter.com/Gerfieldt)
+- Linkedin: [@Kolapo Akinrinlola](https://www.linkedin.com/in/kolapo-akinrinlola-072097110)
 
 ## 🤝 Contributing
 
