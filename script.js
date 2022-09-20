@@ -8,6 +8,7 @@ const bookObj = {
   author: '',
 };
 
+
 const handleTitle = e => {
   bookObj.title = e.target.value;
 };
@@ -23,6 +24,30 @@ const handleDelete = e => {
 
 title.addEventListener ('change', handleTitle);
 author.addEventListener ('change', handleAuthor);
+
+function storageAvailable(type) {
+  let storage;
+  try {
+    storage = window[type];
+    const x = '__storage_test__';
+    storage.setItem(x, x);
+    storage.removeItem(x);
+    return true;
+  } catch (e) {
+    const { code, name } = e;
+    return (
+      e instanceof DOMException
+        && (code === 22
+          || code === 1014
+          || name === 'QuotaExceededError'
+          || name === 'NS_ERROR_DOM_QUOTA_REACHED')
+        && storage.length !== 0
+    );
+  }
+}
+
+const storageChecker = storageAvailable('localStorage');
+
 
 form.addEventListener ('submit', e => {
   if (bookObj.title && bookObj.author) {
@@ -42,6 +67,14 @@ form.addEventListener ('submit', e => {
     bookItem.appendChild (author);
     bookItem.appendChild (button);
     books.appendChild (bookItem);
+    
+    if(storageChecker){
+      localStorage.setItem('allBooks', JSON.stringify(bookObj));
+
+
+
+}
+
     form.reset ();
   }
   e.preventDefault ();
