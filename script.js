@@ -111,7 +111,7 @@ let loadBooks = () => {
   });
 };
 
-window.onload = () => {
+onload = () => {
   if (localStorage.getItem ('allBooks')) {
     loadBooks ();
   }
