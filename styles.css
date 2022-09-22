@@ -11,3 +11,13 @@
 .title {
   font-size: 25px;
 }
+
+p {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px 0;
+}
+
+.delete-btn {
+  margin-left: 160px;
+}
