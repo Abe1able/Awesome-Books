@@ -8,18 +8,29 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main>
-      <section>
-        <header class="title">
-          <h1>All Awesome books</h1>
-        </header>
-        <div class="books"></div>
-      </section>
-      <section>
-        <header>
+    <header>
+      <nav>
+        <div>
+          <h3>Awesome Books</h3>
+        </div>
+        <div>
+          <ul class="nav-list">
+            <li class="list-btn"><a class="list-color" href="#book-list">List</a></li>
+            <li class="vector"></li>
+            <li class="add-new-btn"><a class="add-color"  href="#add-book-form">Add new</a></li>
+            <li class="vector"></li>
+            <li class="contact-btn"><a class="contact-color"  href="#contact-info">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="date"></div>
+    </header>
+      
+    <main>  
+      <div class="books"></div>
+      <section class="add-book-form hide">
           <h2>Add a new book</h2>
-        </header>
-        <form>
+        <form class="form" id="add-book-form">
           <input
             class="input-field"
             type="text"
@@ -39,7 +50,7 @@
           <input class="input-field" type="submit" value="Add" id="add-btn" />
         </form>
       </section>
-      <section>
+      <section class="contact-info hide" id="contact-info">
         <header>
           <h2>Contact Information</h2>
         </header>
@@ -54,6 +65,9 @@
         </ul>
       </section>
     </main>
+    <footer>
+      <p>Copyright ...</p>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,4 +1,14 @@
 const form = document.querySelector ('form');
+const addBookForm = document.querySelector('.add-book-form');
+const contactInfo = document.querySelector('.contact-info');
+const books = document.querySelector('.books');
+const listBtn = document.querySelector('.list-btn');
+const addNewBtn = document.querySelector('.add-new-btn');
+const contactBtn = document.querySelector('.contact-btn');
+const listColor = document.querySelector('.list-color');
+const addColor = document.querySelector('.add-color');
+const contactColor = document.querySelector('.contact-color')
+const dateTimeDiv = document.querySelector('.date');
 
 class BookObj {
   constructor (title, author, id) {
@@ -14,7 +24,9 @@ class Actions {
     const bookItem = document.createElement ('div');
     bookItem.className = 'book-item';
     bookItem.innerHTML = `
+      <article>
       <p class="display">"${book.title}" by ${book.author}</p>
+      <article>
     `
     const button = document.createElement ('button');
     button.type = 'submit';
@@ -28,7 +40,7 @@ class Actions {
 
   static displaySavedBooks () {
     const allBooks = JSON.parse (localStorage.getItem ('allBooks'));
-    allBooks.forEach (book => {
+    Array.from(allBooks).forEach (book => {
       this.addBookToDom (book);
     });
   }
@@ -61,14 +73,47 @@ form.addEventListener ('submit', e => {
   Actions.addBookToDom (newBook);
 
   let previousBooks = JSON.parse (localStorage.getItem ('allBooks')) || [];
-  let allBooks = [...previousBooks, newBook];
+  let allBooks = [...Array.from(previousBooks), newBook];
   localStorage.setItem ('allBooks', JSON.stringify (allBooks));
 
   form.reset ();
+});
+
+listBtn.addEventListener('click', () => {
+  listColor.style.color = 'blue';
+  addColor.style.color = 'black';
+  contactColor.style.color = 'black';
+  addBookForm.style.display = 'none';
+  books.style.display = 'block';
+  contactInfo.style.display = 'none';
+});
+
+addNewBtn.addEventListener('click', () => {
+  listColor.style.color = 'black';
+  addColor.style.color = 'blue';
+  contactColor.style.color = 'black';
+  addBookForm.style.display = 'block';
+  books.style.display = 'none';
+  contactInfo.style.display = 'none';
+});
+
+contactBtn.addEventListener('click', () => {
+  listColor.style.color = 'black';
+  addColor.style.color = 'black';
+  contactColor.style.color = 'blue';
+  addBookForm.style.display = 'none';
+  books.style.display = 'none';
+  contactInfo.style.display = 'block';
 });
 
 onload = () => {
   if (localStorage.getItem ('allBooks')) {
     Actions.displaySavedBooks ();
   }
+  var today = new Date();
+  var date = (today.getMonth()+1)+'-'+today.getDate()+'th-'+ today.getFullYear();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  var dateTime = date+', '+time;
+  
+  dateTimeDiv.innerHTML = dateTime;
 };
