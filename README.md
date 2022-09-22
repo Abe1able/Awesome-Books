@@ -24,7 +24,9 @@ Clone the repository and open the index.html file.
 
 Install all the dependencies by running the command npm -i
 
-## Live Demo
+### Link to Repo
+
+[Awesome-Books](https://abe1able.github.io/Awesome-Books/)
 
 ## Authors
 

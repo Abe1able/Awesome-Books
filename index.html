@@ -8,33 +8,66 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main>
-      <section>
-        <header class="title">
-          <h1> All Awesome books</h1>
-        </header>
-        <div class="books"></div>
+    <header>
+      <nav>
+        <div>
+          <h3>Awesome Books</h3>
+        </div>
+        <div>
+          <ul class="nav-list">
+            <li class="list-btn"><a class="list-color" href="#book-list">List</a></li>
+            <li class="vector"></li>
+            <li class="add-new-btn"><a class="add-color"  href="#add-book-form">Add new</a></li>
+            <li class="vector"></li>
+            <li class="contact-btn"><a class="contact-color"  href="#contact-info">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="date"></div>
+    </header>
+      
+    <main>  
+      <div class="books"></div>
+      <section class="add-book-form hide">
+          <h2>Add a new book</h2>
+        <form class="form" id="add-book-form">
+          <input
+            class="input-field"
+            type="text"
+            placeholder="Title"
+            id="title"
+            required
+          />
+          <br />
+          <input
+            class="input-field"
+            type="text"
+            placeholder="Author"
+            id="author"
+            required
+          />
+          <br />
+          <input class="input-field" type="submit" value="Add" id="add-btn" />
+        </form>
       </section>
-      <form>
-        <input
-          class="input-field"
-          type="text"
-          placeholder="Title"
-          id="title"
-          required
-        />
-        <br />
-        <input
-          class="input-field"
-          type="text"
-          placeholder="Author"
-          id="author"
-          required
-        />
-        <br />
-        <input class="input-field" type="submit" value="Add" id="add-btn" />
-      </form>
+      <section class="contact-info hide" id="contact-info">
+        <header>
+          <h2>Contact Information</h2>
+        </header>
+        <p>
+          Do you have any questions or you just want to say "Hello"? <br />
+          You can reach out to us!
+        </p>
+        <ul>
+          <li>Our email: mail@mail.com</li>
+          <li>Our phone number: 0043572635372876</li>
+          <li>Our address: MainStreet, 22 Avenue, City, Country.</li>
+        </ul>
+      </section>
     </main>
+    <footer>
+      <p>Copyright ...</p>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
